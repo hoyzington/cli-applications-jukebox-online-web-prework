@@ -55,7 +55,7 @@ def play(src)
         end
       end
 #      if present == "yes"
-          puts "Playing #{song[1]}"
+          
       end
     end
     if present == "no"

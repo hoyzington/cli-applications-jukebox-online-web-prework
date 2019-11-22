@@ -51,12 +51,12 @@ def play(src)
       song.each do |item|
         if item == input
           present = "yes"
-          
+          puts "Playing #{song[1]}"
         end
       end
 #      if present == "yes"
           
-      end
+#      end
     end
     if present == "no"
       puts "Invalid input, please try again"

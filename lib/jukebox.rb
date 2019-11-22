@@ -12,15 +12,6 @@ def songs
 end
 
 
-def jukebox(src)
-  new = []
-  src.each_with_index{|item, index|
-    new << [(index + 1).to_s, item]
-  }
-  new
-end
-
-
 def help
   puts "I accept the following commands:"
   puts "- help : displays this help message"
@@ -30,14 +21,25 @@ def help
 end
 
 
+def jukebox(src)
+  new = []
+  src.each_with_index{|item, index|
+    new << [(index + 1).to_s, item]
+  }
+  new
+end
+
+
 def list(src)
-  src.each{|item|
+  juke = jukebox(src)
+  juke.each{|item|
     puts "#{item[0]}. #{item[1]}"
   }
 end
 
 
 def play(src)
+  juke = jukebox(src)
   puts "Please enter a song name or number:"
   while true
     present = "no"
@@ -45,7 +47,7 @@ def play(src)
     if input == "exit"
       return nil
     end  
-    src.each do |song|
+    juke.each do |song|
       song.each do |item|
         if item == input
           present = "yes"
@@ -68,7 +70,6 @@ end
 
 
 def run(src)
-  juke = jukebox(src)
   while true
     puts "Please enter a command:"
     input = gets.strip
@@ -78,9 +79,9 @@ def run(src)
     elsif input == help
       help
     elsif input == list
-      list(juke)
+      list(src)
     elsif input == play
-      play(juke)
+      play(src)
     end
   end
 end

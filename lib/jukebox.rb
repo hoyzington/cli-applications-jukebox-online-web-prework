@@ -40,7 +40,7 @@ end
 def play(src)
   puts "Please enter a song name or number:"
   while true
-    present = false
+    present = "no"
     input = gets.strip
     if input == "exit"
       return nil
@@ -48,14 +48,14 @@ def play(src)
     src.each do |song|
       song.each do |item|
         if item == input
-          present = true
+          present = "yes"
         end
       end
-      if present == true
+      if present == "yes"
           puts "Playing #{song[1]}"
       end
     end
-    if present == false
+    if present == "no"
       puts "Invalid input, please try again"
     end
   end

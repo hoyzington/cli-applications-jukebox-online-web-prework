@@ -87,11 +87,11 @@ def run(src)
     if input == "exit"
       exit_jukebox
       return nil
-    elsif input == help
+    elsif input == "help"
       help
-    elsif input == list
+    elsif input == "list"
       list(src)
-    elsif input == play
+    elsif input == "play"
       play(src)
     end
   end

@@ -52,11 +52,9 @@ def play(src)
         if item == input
           present = "yes"
           puts "Playing #{song[1]}"
+          return nil
         end
       end
-#      if present == "yes"
-          
-#      end
     end
     if present == "no"
       puts "Invalid input, please try again"

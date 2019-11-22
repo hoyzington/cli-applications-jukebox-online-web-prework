@@ -51,9 +51,10 @@ def play(src)
       song.each do |item|
         if item == input
           present = "yes"
+          
         end
       end
-      if present == "yes"
+#      if present == "yes"
           puts "Playing #{song[1]}"
       end
     end

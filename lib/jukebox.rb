@@ -58,6 +58,7 @@ def play(src)
     end
     if present == "no"
       puts "Invalid input, please try again"
+      return nil
     end
   end
 end
